@@ -12,7 +12,6 @@ public class Solution3 {
     public String convertToJson() {
         JSONObject jsonObject = XML.toJSONObject(xmlString);
         String jsonString = jsonObject.get("Person").toString();
-        jsonString = jsonString.replace( "\"firstName\"", " \"modifiedFirstName\"");
-        return jsonString;
+        return jsonString.replace( "\"firstName\"", " \"modifiedFirstName\"");
     }
 }
