@@ -3,15 +3,10 @@ import org.json.XML;
 
 public class Solution3 {
 
-    private String xmlString;
-
-    public  Solution3(String xmlString) {
-        this.xmlString = xmlString;
-    }
-
-    public String convertToJson() {
+    public String convertToJson(String xmlString, String origKey, String newKey) {
         JSONObject jsonObject = XML.toJSONObject(xmlString);
-        String jsonString = jsonObject.get("Person").toString();
-        return jsonString.replace( "\"firstName\"", " \"modifiedFirstName\"");
+        String jsonString = jsonObject.toString();
+        return jsonString.replace(origKey, newKey);
     }
+
 }
